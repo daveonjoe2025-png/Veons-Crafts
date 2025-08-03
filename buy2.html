@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>See Crafts</title>
+  <link rel="stylesheet" href="styles/buy.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>See Handmade Crafts</h1>
+    <p>Browse and see unique crafts delivered by drone!</p>
+  </header>
+
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search crafts..." class="search-input">
+  <button onclick="filterCrafts()" class="search-button">Search</button>
+</div>
+
+  <main class="craft-grid">
+    <div class="craft-item">
+      <img src="images/backgrounds/jet3.jpeg" alt="a jet">
+    </div>
+
+    <div class="craft-item">
+      <img src="images/backgrounds/drone1.jpeg" alt="Drone Craft">
+    </div>
+
+    <div class="craft-item">
+      <img src="images/backgrounds/robo1.jpeg" alt="Robot Craft">
+    </div>
+
+    <div class="craft-item">
+      <img src="images/backgrounds/spaceship1.jpeg" alt="Spaceship Craft">
+    </div>
+
+    <div class="craft-item">
+    <img src="images/backgrounds/fan.jpg" alt="Craft 1">
+  </div>
+
+  <div class="craft-item">
+    <img src="images/logos/un drone en carton qui dit box.webp" alt="Craft 2">
+  </div>
+
+  <div class="craft-item">
+    <img src="images/backgrounds/gun1.jpeg" alt="Craft 3">
+  </div>
+
+  <div class="craft-item">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQDw8PDxANEBAPEA0OEA8PDhANEA8PFREXFxURFxUYHSggGBomGxUVITEhJSkrLi4uFx81ODMsNygtLi4BCgoKDg0OGxAPGC0lHyUwMi8rKy8tKy0rLS0tLS0tLS0tKysuLSstKy0tLS0tLS0tLS0tLS0tKy0tKy4tLSstN//AABEIAMIBAwMBIgACEQEDEQH/xAAcAAADAAMBAQEAAAAAAAAAAAAAAQIDBQgEBgf/xABDEAACAQIDAgwFAQUHAwUAAAABAgADEQQSIQUxEyJBUVJUYXGBkpPSBhcykaGxFCMzQvAHYnJzgsHhoqOyFSQ0RFP/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAmEQEBAAIBBAICAQUAAAAAAAAAAQIRAwQSITFBUSIy8RMjUmHB/9oADAMBAAIRAxEAPwD8NhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhCEAhOtRRXor5RDgV6K+UQOSoTrVVpnQCmTzAKZYor0V8ogcjwnXPAr0V8oj4FeivlEDkWE674FeivlEoUV6KeUQOQoTr7gV6K+UQ4FeivlEDkGE694FeinlEfAr0V8ogcgwnX/AAK9FfKIxQXop5RA4/hOweAXop5RFwC9FfKIHH8J2DwC9FPKIuBXop5RA4/hOwOBXor5RDgV6KeUQOP4TsDgV6K+UQ4BeivlEDj+E7A4FeivlEOBXor5RA4/hOwOBXor5RFwK9FfKIHIEJ1/wK9FfKIcCvRXyiByBCdfcCvRXyiLgV6KeUQOQoTr00V6K+USTRXor5RA5EhOuOBXor5RCNjy7Xx64ahVrvqtNb23ZmJsq37SQJ+d7YTG1iamPrJhKJyEJUc2CtmyhaFPM5JytYsNcp10n6JtjADEUHpEKc2RgrEhWKsGCkjUAkWNtbGfmlbaVTCOaLYVKTJTelTFQlnRSAA4cAZzm4RrjQ8KwtbScXU3/L09HopNXtn5f8/1/Dx7ao4NVw74OqGJWotYW4IrVQizhCzMoYNpc/yndum5+EPiqulVaNZnrUGyglru1EEgB82/LcgG/h2+ZPinQmpRV2zUAoBZMtKnVaqqZ73sGIAXLawOvJNhsNa20SiGgqUEqNVq17scxNZKrKCfqctTAuNwJ7BOfDXfvC+frTs5J/bs5MfH3bH6PaO0dowJ6rwiAlWjAjtCU2haXaFoEWjAlWjAgTaO0q0doE2hKtAiBEIqtVUyhmVS5yqCbFmsTYDlNgT4THVr2BIVmsL2XLc9guZXLPHH3Vpjb6jLaFpq/wBsxLHi0kpjXV34Q9mgtb7/APGJsHVf+LXqsLg5aeWkvdxRcjvMyy6nCLzgyrZYrG0qVhUqU0J3KzAM3cu8+E82F2xRqsy0izFAGN0ZNCSLjMByj9J58PsuhT+mmgJ3k8Yk7+WTjlyGnW3cEbP/AJTWDfbRv9Mwy6q39Y2x6efLZJXJYXAAPbrPRPHaeqk1xrvmnT8ty3MmfNxzHzFRWlWhOpgm0LSrRQJtFaXEYE2kkTIRIIgRaEq0UhCBMeJwlOquWrTp1F6NRFcfmZZQjSZbPTWU/hzBA3GFw1/8pT+DNoqgAAAADQACwAjEoCRMZPUTcssvdK0oCOFpZAjgBKtAmFoFgN5E8uK2itMgZarlrkCnTLaDlJ5OT7ytzxnurTHK/D1gR2mvGLrMdKaUxzuxdt3RFv15IjRqN9dapryJal9iBeZZdRhF5w5V7+FUEA8/NJxuMpJuFRjYmyoxuBy3On5nhQGkLcZqfSJLNT7Sd7L27x2jd6r83eDe/wCk58upyt3Gs4J8tfU2rXJBp4duDB45Z1FTJb+Vefl38nbp7EqiooZWLBhoQSOw9x/ImB70yWFzTJuygXKcpdRzc48RzHG6FDwtHjhrM9NSCKgt9acme3gR4EZZ8uWV81pjx4xH/o1DW9MMTqWYlmOoI1Ot7gfYShWaictVi1I6LWO9f7tT3/fXU+2hUV1DKbqdx7t4I5CN1o2QEa2sdCDzTPzVyKybSb06QCXC7wFLEsewA3J7pPDE/RTc9r/ul/PG/wCmRoZAv9CJ6YKkEDKQQQdRbtklKjb3VeymoZvM1wfKIv2JN7DNy/vGL2PYDoPACNCFxCWCpx7aDIC47sw0HiZ6MI5JN1KjkBIJ/Fx+ZTWA13Aak6AeJnlp7RomotNaiM5ucqXqacpJGgE14rZnKpyTeNjaQtGIWnqOEorSrQtAm0Rl2itAiIiWREYGO0JVoSBhyygJckCSKAlARCVaARgQAjAgIm0w1cSBvmZ1nixSQKo6qO0CNhYj7ff/AJAmLBHi26JI8D/X4md1uLfnfY888nPHWVj0MbubFoxKAmE4mmNAQSN4QGoR3hbmV0llmOlRyk2+k65TuB5bcw7P0iNVz9NO3bUcL/45j97TT7Y+IaWGOWrXvUO6jQRc3cS5IHiRLSW+kWt9aeHMELNTIencmoqHNwZO91t+V8Ryg/G4r+0TD0yM+DruORmxFCqfKWJHhN3sP48wOLIQO9FzYBa4CAk6ABgSvheW/p36R3xu1o68JSZRnF2BXOj6aPYEa7tQdRv5LP8AZifreo3Yp4Nf+mxt3kzX4rbGHoG61VZGazrT/e8GxvdwVuAL7x23GtwdZjfjOmP4VJm/vVWFNR221P6SO2p2+mpUUX6FVb78oAv9oVq6ILuyKN93YL+J8SdqbQxX8IVQp5KKcGvfwh90zYX4NxNQ5qzpTvvOtaoe8m1j95fHgyql5cY22K+KsOtwmeqf7q5Fv3mx+wM1Fb4uruStGmqnmRWxFT8D/ab7BfBmGSxqZ6ptbjtxfKth+JvcNgqdMZaaIoHIqgD8Tox6afLLLn+n5+myNoYs3qhwL3vXe1u0IL/7T6rYmwBhxvBY2zNbf2DmE31orTfHjxx9Mcs7l7Qq2jtHaFpdVNo7RwtAm0REu0RgQYpRkwJjhCQJELRLKAkhqJVoASwICAjAlARwJInlxCT2gRNTBhL53GYz9nV6pRnAGqrYHTl17zHsraYxQJSoi5fqVBnZbk2OZtNbdGbLGYNSCDNHsbgsMjqlOqTUdnVQALpeykMSAQbEixOjTj6jCTy6OHK+m6/ZVP13fnzksO/L9I8BMyLpYDTkAGg7JrKmOq78tOmOdruwHaDlt+ZK3bVmeoOYg8GR22Cr97zl0222FVrkU1YZ3IXQ3Kjla3Jp+SJoNpfAmHbEuzLpUCtfXM3FAIJ7wd1t83wZUS6hVC6gLYAEd02FDaNGqvHYU6i/UlQimytbeL7x2i4m/BZL5Y829PlF/s+wCj+Eb85dyf1mr2jsSnh2VlAKqw/iKrkDnznW3YSRpu5Z96MQhBysGHONx7RNdi8MtUjNuGtuUzpzywk8ssMcrfDxbYw6VcOistkZqYIUEFVfi6W3fVa/J4T1bO+HMJTsy0UzD+ZuO33NzMG1Kl+DorvZ6bMBplRTcX00uV057Gb3DDizPpp+K/NfKlpgbgI7Sn3H/aaXCY4BAFxdJQS7cG9MNXS7ElCc3ITzTbkz7JtjJtuLR5ew+ItNUMRf/wCzjm/y8JmH3FI2+892EUWzZq7f52ZT5Ta32lOPkyyvpa4yHhq61OEAuGpPkZTv3Ahu43mW08Fb91iqdT+TEDgKnY4uabf+Q8RNlaaS3dlVrHaFpdoiJdCLRgSrRQJtERMkkwMZEkiZLSSIGOEq0IGFRMgkqJYEClEtRJAmQQAQjMQgUINGInhLV7YqkUyFNmcpSU77M7BQbdl7+E19dgGyg2AsiqalhZRbTLqZl2tUvWoJqdatbQX1ROLp/iYHvWeYta+uUG+8ikp8Bdrzh6i7y06eGeNsdKoWzMqVcqsENVURAGPISxLkdtrds9FNxf6Q19xs1QfdtAe6QzHKihWApmoRlLUzZtCCSwDjvBMaLmP8rXNr2esD2HcqmZZdvjtXx38p2ttelhxSNYEqXUnKBoSQqki+trgnu8I0+J8GwBFZSPEcl9019XZ9PG4qolVA9JGC2JupKGw03aEHxm4pfAuzQP8A4tIHsuv6TbDg7sdqZcvbdPFivirDINGDnmzAdo5z/Wtp412xi8SSMPSKqdA2UqB25m3+AE+ownw1g6X8PD0lPPluZs0pKuigDuFprj0+M9s7zX4fP7F2GyE1KrFnbeSSfCb7LYd0yRMt9OebySTUY22+2PCVA6BiGUm+hB01mcW5z9jPJTwjKoVa9cKoAAtR0HINUlfs7/8A71/+z7JjZyfa3hnNtbX05wRFaCLYWuT2nUmObTevKrx7VwfDUalO5BI4rA2KuNVYHkIIEvBM5ReEQo2VQwLB+NbXUE6T0WhaNTezZERWlQkibRWlERWgTaSZktJIgRERKtEYEQjhAxKJYkrKgUJQkiUIDlARCUIDEiqdJYEx1t0D53FWOJqXy3SjRVbkgjPUcsNN18id9uyQLjUEryFgq0gP8V+Me+RnBq4s6aVaVMsTlGVaKmxP+J2+8YXlA3cqixH+Go2+eby+c67MJ+MMLe1gD2gM/wBqj6CeqhTIa7Akg6Zql33XtkHFnmBudLHn+qsfFdw7xPdh2+kajXcbW8LSizxfCKXzvbVmueXt/wB59aBPmvhWmEDoL8R2TW97rod/aDPp56PH+scmf7VMIGFpooULRyK9VUVnbRVBJNr6CAkrKb2N7EqbAkXG8XtLuP60nifZdM3qK1Wlm411xDouvLlJK/iedRl+nHg67qnAVfDihTOe8mcvqLyRtZgqVyKqU1AJIZ2J/lQcviT+sjDCqWzM9I094tRak+7luxH4mLZ5z8JW1/etlW4t+6TQHuOp/wBUtc8u31q1Gpt7lNwDHHaE2VTCVaKAoiI4QIilGKBJkGWYjAxxwhAxiUJIlCA5SyLy1gWIxJBlQKAmGvumaYK+6RR8zhw167cbXE1zcEAgLZRqdBoPt2wOp0s3OLNXP+pdwPbMWHN1q8v/ALvGC2ThL/vebl5/zDErmTKx3ggcI5C68gCEG3YSJ5uX7V3T0zcLf+bUGwDVACOwBP0M9GFezbrC4ucgp831Am55dZpdm4B6TZmCoopZClMBEJvcubqDvLcrHXfoJtKR1BAU23FQ1a3c5+nujKSX8aib15ZPhw2q4hNNK1T8uTrPqxunyWzrLja4FuPkqW7Sq3v43n1anSd3Dd4xy8n7VUDJzREzVRYiZQRYgEHQg6gwELwMC4CiN1KiLbv3aafiehVA3ad2kLwgefH03ak60yA7KQLkga9o3R4JTkXMnBkKFyZg4W3MRvmeEi4y3YIiIRyQRQJigBijkwAyTKkmBMUqSYEwihAwoZcwI0y5oFCWJjBlgwMiypjBl3gXPPiN0zBpFRbwPjsGDmxVJrHJiqlQXZlsj8YHTW3GmdH35c5JGvA0/wBX3HxtNhjNkOaorUmCVAuU31V15mHLNdjtn7SdrK9FF1+ksuluW3Gv25vCcOfBl3XTqx5cdeWSopUAuKVEa8as4Y+C3325mnkfbFBDdWq4l7aAcRCb/ci438bdKwnwSSc2IrM7HfawJ1vv37/0HMJ9DgNhYej9KC/OdTL49N91W831Gq2DharVGr1LhnO61gBuA+wA8J9SNBJFhugzTqxxkmowttu6d47zEGlBpKGQGO8xhoFoGUGF5hLSg0DLC8xho80C7xSbwvAqKTeF4FExRXivAIjAmTeAXiJiJk3gF4SbwgeMNLDzmr5kbX643o0PZD5kbX663o4f2Qh0yrSs05lH9pe2Ouv6OH9kfzM2z11/Rw/sgdNhpWacxfMzbPXX9HD+yP5m7Z66/o4f2QOngYZpzD8zts9df0cP7IfM7bPXX9HD+yB09mjzTmD5nbZ66/o4f2Q+Z22euv6OH9kDp3NDPOYvmbtnrr+jh/ZD5m7Z66/o4f2QOnS8Recx/M3bPXX9HD+yL5mbZ66/o4f2QOms8YqTmT5l7Y66/o4f2RfMvbHXX9HD+yB05wkRqTmX5l7Y66/o4f2RfMvbHXX9HD+yB03wkoPOYvmXtjrr+jh/ZH8zNsddf0cP7IHTwqShUnL/AMzNs9df0cP7I/mbtnrr+jh/ZA6gzxhpy98zts9df0cP7I/mftnrz+jh/ZA6gzwzzl/5n7Z68/o4f2Q+Z+2evP6OH9kDp8tJzzmL5n7Z68/o4f2RfM7bPXX9HD+yB08Xkl5zH8zds9df0cP7Ivmbtnrr+jh/ZA6aLyc85n+Zm2euv6OH9kXzL2x11/Rw/sgdLloTmj5l7Y66/o4f2RwPkYQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhAIQhA//Z" alt="Drone Craft">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Veon Crafts. All rights reserved.</p>
+  </footer>
+<script>
+  function filterCrafts() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const items = document.querySelectorAll('.craft-item');
+
+    items.forEach(item => {
+      const title = item.querySelector('h3').textContent.toLowerCase();
+      item.style.display = title.includes(input) ? 'block' : 'none';
+    });
+  }
+</script>  
+</body>
+</html>
