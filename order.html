@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Place Your Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/order.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f3e9;
+      color: #222;
+      text-align: center;
+      padding: 40px;
+    }
+    .order-box {
+      background: white;
+      padding: 30px;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #11122b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0000ff;
+      color: red;
+    }
+    .account-info {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #cea135;
+    }
+  </style>
+  <!-- Include EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init('qqh-e4hOB4L5S5kw-'); // Replace this
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="order-box">
+    <h2>Place Your Order</h2>
+    <p>Send your payment to the account below and fill in your details:</p>
+    <p class="account-info">Account Number: <span id="accNumber">08067974903</span></p>
+    
+    <form id="orderForm" onsubmit="handleSubmit(event)">
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+      <input type="text" name="phone" id="phone" placeholder="Phone Number" required>
+      <input type="text" name="product" id="product" placeholder="Product Name" required>
+      <input type="text" name="address" id="address" placeholder="Delivery Address" required>
+      <input type="text" name="payment_method" id="payment_method" placeholder="Payment Method (e.g., Transfer, Cash)" required>
+      <input type="text" name="payment_reference" id="payment_reference" placeholder="Payment Reference" required>
+
+      <button type="submit">Send Order</button>
+    </form>
+  </div>
+
+  <script>
+    // Fill product from ?product=name in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('product');
+    if(product) {
+      document.getElementById('product').value = product;
+    }
+
+    function handleSubmit(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'), 'qqh-e4hOB4L5S5kw-')
+    .then(() => {
+      alert('Order sent! Daveon will contact you soon.');
+      document.getElementById('orderForm').reset();
+    })
+    .catch((error) => {
+      console.error('EmailJS error:', error);
+      alert('There was an error sending your order. Please try again.');
+    });
+}
+  </script>
+
+</body>
+</html>
