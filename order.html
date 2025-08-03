@@ -88,12 +88,12 @@
 
   emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'), 'qqh-e4hOB4L5S5kw-')
     .then(() => {
-      alert('Order sent! Daveon will contact you soon.');
+      alert('Order sent! Daveon will contact you soon. Money Has been deducted from acc.');
       document.getElementById('orderForm').reset();
     })
     .catch((error) => {
       console.error('EmailJS error:', error);
-      alert('There was an error sending your order. Please try again.');
+      alert('There was an error sending your order. Please try again, and check details.');
     });
 }
   </script>
