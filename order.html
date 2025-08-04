@@ -46,7 +46,32 @@
       font-weight: bold;
       color: #cea135;
     }
+    .auth-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.auth-btn {
+    background-color: #ff0909;
+    color: #000;
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #cea135;
+}
   </style>
+<div class="auth-buttons">
+  <a href="signin.html" class="auth-btn">Sign In</a>
+  <a href="login.html" class="auth-btn">Log In</a>
+</div>
   <!-- Include EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
@@ -88,12 +113,12 @@
 
   emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'), 'qqh-e4hOB4L5S5kw-')
     .then(() => {
-      alert('Order sent! Daveon will contact you soon. Money Has been deducted from acc.');
+      alert('Order sent! Daveon will contact you soon. Money will be deducted from your account');
       document.getElementById('orderForm').reset();
     })
     .catch((error) => {
       console.error('EmailJS error:', error);
-      alert('There was an error sending your order. Please try again, and check details.');
+      alert('There was an error sending your order. Please try again.');
     });
 }
   </script>
