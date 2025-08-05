@@ -71,6 +71,32 @@ body {
   height: auto;
   border-radius: 8px;
 }
+  
+/* Add this to your CSS */
+
+.video-card {
+    max-width: 650px;     /* or 600px, or any size you want */
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* Make video card text and button full width */
+.video-card h3, 
+.video-card .price {
+    width: 100%;
+    font-size: 1.4em;     /* increase text size */
+    text-align: center;
+}
+
+.video-card .buy-btn {
+    display: block;        /* makes button full width */
+    width: 100%;           /* button stretches to card size */
+    font-size: 1.1em;      /* bigger text in button */
+    padding: 12px 0;       /* taller button */
+}
 
 .craft-item h3 {
   margin: 15px 0 10px;
