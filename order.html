@@ -28,8 +28,9 @@
       border-radius: 5px;
       border: 1px solid #ccc;
     }
+    /* Gradient Button Style */
     button {
-      background-color: #11122b;
+      background: linear-gradient(45deg, #6a11cb, #2575fc); /* Purple to Blue Gradient */
       color: white;
       border: none;
       cursor: pointer;
@@ -37,35 +38,38 @@
       transition: background 0.3s;
     }
     button:hover {
-      background-color: #0000ff;
-      color: red;
+      background: linear-gradient(45deg, #2575fc, #6a11cb); /* Reverse Gradient */
+      color: #fff;
     }
+
+    /* Auth Buttons Gradient */
+    .auth-btn {
+      background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Red to Orange Gradient */
+      color: #000;
+      padding: 6px 14px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .auth-btn:hover {
+      background: linear-gradient(45deg, #feb47b, #ff7e5f); /* Reverse Gradient */
+    }
+
     .account-info {
       margin-top: 20px;
       font-weight: bold;
       color: #cea135;
     }
+
     .auth-buttons {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-    flex-direction: row;
-    align-items: flex-end;
-}
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+      align-items: flex-end;
+    }
 
-.auth-btn {
-    background-color: #ff0909;
-    color: #000;
-    padding: 6px 14px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.auth-btn:hover {
-    background-color: #cea135;
-}
   </style>
   <!-- Include EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -112,7 +116,7 @@
 
   emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'))
     .then(() => {
-      alert('Order sent! Daveon will contact you soon. Money has been deducted from your acc.');
+      alert('Order sent! Daveon will contact you soon.');
       document.getElementById('orderForm').reset();
     })
     .catch((error) => {
