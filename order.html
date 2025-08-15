@@ -67,24 +67,24 @@
     background-color: #cea135;
 }
   </style>
-<div class="auth-buttons">
-  <a href="signin.html" class="auth-btn">Sign In</a>
-  <a href="login.html" class="auth-btn">Log In</a>
-</div>
   <!-- Include EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    (function(){
-      emailjs.init('qqh-e4hOB4L5S5kw-'); // Replace this
-    })();
+    document.addEventListener("DOMContentLoaded", function () {
+      emailjs.init('qqh-e4hOB4L5S5kw-');
+    });
   </script>
 </head>
 <body>
+  <div class="auth-buttons">
+    <a href="signin.html" class="auth-btn">Sign In</a>
+    <a href="login.html" class="auth-btn">Log In</a>
+  </div>
 
   <div class="order-box">
     <h2>Place Your Order</h2>
     <p>Send your payment to the account below and fill in your details:</p>
-    <p class="account-info">Account Number: <span id="accNumber">0805555555</span></p>
+    <p class="account-info">Account Number: <span id="accNumber">08055555555</span></p>
     
     <form id="orderForm" onsubmit="handleSubmit(event)">
       <input type="text" name="name" id="name" placeholder="Your Name" required>
@@ -110,9 +110,9 @@
     function handleSubmit(e) {
   e.preventDefault();
 
-  emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'), 'qqh-e4hOB4L5S5kw-')
+  emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'))
     .then(() => {
-      alert('Order sent! Daveon will contact you soon. Money will be deducted from your account');
+      alert('Order sent! Daveon will contact you soon. Money has been deducted from your acc.');
       document.getElementById('orderForm').reset();
     })
     .catch((error) => {
@@ -121,6 +121,6 @@
     });
 }
   </script>
-
+  
 </body>
 </html>
