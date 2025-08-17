@@ -19,6 +19,7 @@
       margin: 0 auto;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: float 3s ease-in-out infinite;
     }
     input, button {
       width: 100%;
@@ -69,7 +70,14 @@
       flex-direction: row;
       align-items: flex-end;
     }
-
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }   
   </style>
   <!-- Include EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -116,7 +124,7 @@
 
   emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'))
     .then(() => {
-      alert('Order sent! Daveon will contact you soon.');
+      alert('Order sent! Daveon will contact you soon. Money has been deducted from your acc.');
       document.getElementById('orderForm').reset();
     })
     .catch((error) => {
