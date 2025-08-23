@@ -78,6 +78,22 @@
         transform: translateY(-15px);
       }
     }   
+    .spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2575fc;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
   </style>
   <!-- Include EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -122,14 +138,28 @@
     function handleSubmit(e) {
   e.preventDefault();
 
-  emailjs.sendForm('service_plp774g', 'template_hpvmong', document.getElementById('orderForm'))
+  const form = document.getElementById('orderForm');
+  const button = form.querySelector('button');
+
+  // Add spinner
+  button.disabled = true;
+  button.innerHTML = 'Sending... <span class="spinner"></span>';
+
+  emailjs.sendForm('service_plp774g', 'template_hpvmong', form)
     .then(() => {
-      alert('Order sent! Daveon will contact you soon. Money has been deducted from your acc.');
-      document.getElementById('orderForm').reset();
+      const product = document.getElementById('product').value;
+      const name = document.getElementById('name').value;
+
+      alert(`Thanks ${name}! Your order for "${product}" has been sent. We'll contact you soon with delivery details.`);
+      form.reset();
     })
     .catch((error) => {
       console.error('EmailJS error:', error);
-      alert('There was an error sending your order. Please try again.');
+      alert(`Oops! Something went wrong: ${error.text || error}`);
+    })
+    .finally(() => {
+      button.disabled = false;
+      button.innerHTML = 'Send Order';
     });
 }
   </script>
