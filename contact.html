@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
     <link href="https://fonts.google.com/specimen/Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/">
     <link rel="stylesheet" href="styles/common.css"> 
@@ -22,6 +23,12 @@
     <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/media-queries.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("qqh-e4hOB4L5S5kw-"); // Replace with your EmailJS public key
+        })();
+    </script>
 
 </head>
 <body> 
@@ -75,7 +82,7 @@
                     <i class="fa-solid fa-phone"></i>
                     
                     <div>
-                        080 5555 555
+                        080 6797 4903
                     </div>
                 </div>
 
@@ -88,30 +95,28 @@
                 </div>
             </div>
 
-            <div class="form">
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="form">
                 <div class="form-group">
-                    <input type="text" id="fullName" placeholder="Your name">
+                    <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
                     <label for="fullName">Your name</label>
                 </div>
 
                 <div class="form-group">
-                    <input type="email" id="email" placeholder="Your email">
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
                     <label for="email">Your email</label>
                 </div>
 
                 <div class="form-group">
-                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                    <textarea name="message" id="message" placeholder="Message" required></textarea>
                     <label for="message">Message</label>
 
                     <div class="spacer10"></div>
 
-                <a href="order.html">    
                     <div class="centered-btn-wrapper">
                         <button type="submit" class="btn">Send</button>
                     </div>
-                </a>    
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
@@ -125,7 +130,7 @@
         
         <div class="footer-phone-hours">
             <span class="phone">
-                080 555 5555
+                080 679 974903
             </span>
             
             <span class="hours">
@@ -186,5 +191,45 @@
       document.getElementById('orderForm').reset();
     }
   </script>
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // prevent default form submission
+
+        emailjs.sendForm('service_plp774g', 'template_hpvmong', this)
+            .then(function() {
+            alert('Message sent successfully!');
+            document.querySelector('.contact-form').reset();
+            }, function(error) {
+            alert('Oops! Something went wrong.\n' + JSON.stringify(error));
+            });
+        });
+    </script>
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // prevent page reload
+
+        emailjs.sendForm('service_plp774g', 'template_hpvmong', this)
+            .then(function() {
+            alert('Message sent successfully!');
+            document.querySelector('.contact-form').reset();
+            }, function(error) {
+            alert('Oops! Something went wrong.\n' + JSON.stringify(error));
+            });
+        });
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default page reload
+
+    emailjs.send("service_plp774g", "template_hpvmong", {
+        from_name: document.getElementById("fullName").value,
+        from_email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    })
+    .then(function(response) {
+        alert("Message sent successfully!");
+    }, function(error) {
+        alert("Failed to send message. Please try again.");
+    });
+});
+    </script>
 </body>
 </html>
