@@ -27,3 +27,12 @@
 .company-metadata-sidebar-wrapper > .company-detials-wrapper{
     color: #cea135;
 }
+
+.centered-btn-wrapper {
+    color: #11122b;
+    background-color: #cea135;
+    display: flex;
+    width: fit-content;
+    align-content: center;
+    justify-content: center;
+}
